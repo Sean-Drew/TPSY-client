@@ -59,6 +59,7 @@ const signOutSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
+  $('.content').html('')
   // console.log('signOutSuccess ran. Data is:', data)
   $('#authenticated').hide()
   $('#unauthenticated').show()
