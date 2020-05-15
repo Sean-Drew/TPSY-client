@@ -39,11 +39,21 @@ const onShowBeer = (event) => {
     .catch(ui.showBeerFailure)
 }
 
+const onDestroyBeer = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.destroyBeer(formData)
+    .then(ui.destroyBeerSuccess)
+    .catch(ui.destroyBeerFailure)
+}
+
 const addHandlers = () => {
   $('#getBeersButton').on('click', onGetBeers)
   $('#clearBeersButton').on('click', onClearBeers)
   $('#create-beer').on('submit', onCreateBeer)
   $('#show-beer').on('submit', onShowBeer)
+  $('#destroy-beer').on('submit', onDestroyBeer)
 }
 
 module.exports = {

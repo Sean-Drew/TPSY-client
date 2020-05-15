@@ -35,6 +35,7 @@ const createBeerFailure = (error) => {
 
 const showBeerSuccess = (data) => {
   console.log(data)
+  $('form').trigger('reset')
   $('#message').text('Beer Shown Successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -45,6 +46,21 @@ const showBeerSuccess = (data) => {
 const showBeerFailure = (error) => {
   console.error(error)
   $('#message').text('Failed to show beer.')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
+const destroyBeerSuccess = (data) => {
+  console.log(data)
+  $('form').trigger('reset')
+  $('#message').text('Deleted Beer Selection!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const destroyBeerFailure = (error) => {
+  console.error(error)
+  $('#message').text('Failed to delete beer.')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }

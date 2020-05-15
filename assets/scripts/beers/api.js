@@ -24,12 +24,22 @@ const createBeer = function (data) {
   })
 }
 
-const showBeer = function (dataObj) {
+const showBeer = function (data) {
   // console.log(dataObj)
   // console.log('green')
   return $.ajax({
-    url: config.apiUrl + '/beers/' + dataObj.id,
+    url: config.apiUrl + '/beers/' + data.id,
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const destroyBeer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/beers/' + data.id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -39,5 +49,6 @@ const showBeer = function (dataObj) {
 module.exports = {
   getBeers,
   createBeer,
-  showBeer
+  showBeer,
+  destroyBeer
 }
