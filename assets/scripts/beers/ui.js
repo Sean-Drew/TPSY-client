@@ -1,6 +1,7 @@
 'use strict'
 
 const showBeersTemplate = require('../templates/beer-listing.handlebars')
+const showBeerById = require('../templates/beer-by-id.handlebars')
 
 const getBeersSuccess = (data) => {
   console.log(data)
@@ -32,6 +33,22 @@ const createBeerFailure = (error) => {
   $('#message').addClass('failure')
 }
 
+const showBeerSuccess = (data) => {
+  console.log(data)
+  $('#message').text('Beer Shown Successfully!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  const showById = showBeerById({ beer: data.beer })
+  $('.content').html(showById)
+}
+
+const showBeerFailure = (error) => {
+  console.error(error)
+  $('#message').text('Failed to show beer.')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
 const clearBeers = () => {
   $('.content').empty()
   $('#message').text('Cleared beer selection.')
@@ -44,5 +61,7 @@ module.exports = {
   getBeersFailure,
   createBeerSuccess,
   createBeerFailure,
+  showBeerSuccess,
+  showBeerFailure,
   clearBeers
 }

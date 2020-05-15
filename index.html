@@ -13,13 +13,7 @@
     </head>
     <body>
 
-      <nav>
-        <div class="app-name">TPSY</div>
-        <div class="nav-buttons">
-          <button id="getBeersButton" class="btn btn-info mr-2">Get My Beers!</button>
-          <button id="clearBeersButton" class="btn btn-outline-info">Clear Beer Selection</button>
-        </div>
-      </nav>
+      <h1> TPSY </h1>
 
       <!-- <p>Messages should appear below this.</p> -->
       <div id="message"></div>
@@ -59,6 +53,17 @@
         <input class="input-field" type="text" name="description" placeholder="Describe the beer!">
         <button type="submit" class="btn btn-primary">Add to beer log</button>
       </form>
+
+      <div id="beer-buttons">
+        <button id="getBeersButton" class="btn btn-info mr-2">Get My Beers!</button>
+        <button id="clearBeersButton" class="btn btn-outline-info">Clear Beer Selection</button>
+      </div>
+
+      <form id="show-beer">
+        <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
+        <button id="showBeerById" class="btn btn-info mr-2">Select Beer By ID</button>
+      </form>
+
     </div>
 
     <main>

@@ -1,0 +1,33 @@
+{{log beer}}
+<section data-id="{{beer.id}}">
+
+  <h3>Brand:</h3>
+  <h5>
+    {{beer.brand}}
+  </h5>
+
+  <h3>Name:</h3>
+  <h5>
+    {{beer.name}}
+  </h5>
+
+  <h3>Style:</h3>
+  <h5>
+    {{beer.style}}
+  </h5>
+
+  <h3>Description:</h3>
+  <p>
+    {{#if beer.description}}
+      {{beer.description}}
+    {{else}}
+      No description provided.
+    {{/if}}
+  </p>
+
+  <h3>ID</h3>
+  <h5>
+    {{beer._id}}
+  </h5>
+
+</section>

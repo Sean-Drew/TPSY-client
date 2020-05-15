@@ -26,10 +26,24 @@ const onCreateBeer = (event) => {
     .catch(ui.createBeerFailure)
 }
 
+const onShowBeer = (event) => {
+  event.preventDefault()
+  const form = event.target
+  // console.log(form)
+  // console.log('purple')
+  const formData = getFormFields(form)
+  // console.log(formData)
+  // console.log('blue')
+  api.showBeer(formData)
+    .then(ui.showBeerSuccess)
+    .catch(ui.showBeerFailure)
+}
+
 const addHandlers = () => {
   $('#getBeersButton').on('click', onGetBeers)
   $('#clearBeersButton').on('click', onClearBeers)
   $('#create-beer').on('submit', onCreateBeer)
+  $('#show-beer').on('submit', onShowBeer)
 }
 
 module.exports = {
