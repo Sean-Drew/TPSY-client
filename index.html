@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Lockwood Games</title>
+      <title>TPSY</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,10 +13,13 @@
     </head>
     <body>
 
-
-      <div id="name-header">
-        <h1>TPSY</h1>
-      </div>
+      <nav>
+        <div class="app-name">TPSY</div>
+        <div class="nav-buttons">
+          <button id="getBeersButton" class="btn btn-info mr-2">Get My Beers!</button>
+          <button id="clearBeersButton" class="btn btn-outline-info">Clear Beer Selection</button>
+        </div>
+      </nav>
 
       <!-- <p>Messages should appear below this.</p> -->
       <div id="message"></div>
@@ -49,6 +52,10 @@
         <button type="submit" class="btn btn-primary">Sign Out</button>
       </form>
     </div>
+
+    <main>
+      <div id="content" class="content"></div>
+    </main>
 
     </body>
 </html>
