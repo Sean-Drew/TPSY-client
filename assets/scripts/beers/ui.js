@@ -18,6 +18,20 @@ const getBeersFailure = (error) => {
   $('#message').addClass('failure')
 }
 
+const createBeerSuccess = (data) => {
+  console.log(data)
+  $('#message').text('Logged new beer!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const createBeerFailure = (error) => {
+  console.error(error)
+  $('#message').text('Error logging new beer.')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
 const clearBeers = () => {
   $('.content').empty()
   $('#message').text('Cleared beer selection.')
@@ -28,5 +42,7 @@ const clearBeers = () => {
 module.exports = {
   getBeersSuccess,
   getBeersFailure,
+  createBeerSuccess,
+  createBeerFailure,
   clearBeers
 }

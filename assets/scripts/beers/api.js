@@ -13,6 +13,18 @@ const getBeers = function () {
   })
 }
 
+const createBeer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/beers',
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  getBeers
+  getBeers,
+  createBeer
 }

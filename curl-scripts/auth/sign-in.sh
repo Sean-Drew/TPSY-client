@@ -1,4 +1,4 @@
-curl "https://mysterious-wildwood-08920.herokuapp.com/sign-up" \
+curl "https://mysterious-wildwood-08920.herokuapp.com/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
