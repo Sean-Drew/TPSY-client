@@ -1,19 +1,19 @@
 {{#each beers as |beer|}}
   {{log beer}}
   <section data-id="{{beer.id}}">
-    <h6>Brand:</h6>
-    <h3>
+    <h3>Brand:</h3>
+    <h5>
       {{limit beer.brand 20}}
-    </h3>
-    <h4>Name:</h4>
-    <h2>
+    </h5>
+    <h3>Name:</h3>
+    <h5>
       {{limit beer.name 25}}
-    </h2>
-    <h4>Style:</h4>
-    <h2>
+    </h5>
+    <h3>Style:</h3>
+    <h5>
       {{limit beer.style 15}}
-    </h2>
-    <h6>Description:</h6>
+    </h5>
+    <h3>Description:</h3>
     <p>
       {{#if beer.description}}
         {{beer.description}}
