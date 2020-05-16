@@ -25,11 +25,24 @@ const createBeer = function (data) {
 }
 
 const showBeer = function (data) {
-  // console.log(dataObj)
+  // console.log(data)
   // console.log('green')
   return $.ajax({
     url: config.apiUrl + '/beers/' + data.id,
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateBeer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/beers/' + data.id,
+    method: 'PATCH',
+    data: {
+      beer: data
+    },
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -50,5 +63,6 @@ module.exports = {
   getBeers,
   createBeer,
   showBeer,
+  updateBeer,
   destroyBeer
 }

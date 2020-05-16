@@ -39,6 +39,15 @@ const onShowBeer = (event) => {
     .catch(ui.showBeerFailure)
 }
 
+const onUpdateBeer = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateBeer(formData)
+    .then(ui.updateBeerSuccess)
+    .catch(ui.updateBeerFailure)
+}
+
 const onDestroyBeer = (event) => {
   event.preventDefault()
   const form = event.target
@@ -53,6 +62,7 @@ const addHandlers = () => {
   $('#clearBeersButton').on('click', onClearBeers)
   $('#create-beer').on('submit', onCreateBeer)
   $('#show-beer').on('submit', onShowBeer)
+  $('#update-beer').on('submit', onUpdateBeer)
   $('#destroy-beer').on('submit', onDestroyBeer)
 }
 

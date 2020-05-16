@@ -1,11 +1,10 @@
 'use strict'
 
 const showBeersTemplate = require('../templates/beer-listing.handlebars')
-const showBeerById = require('../templates/beer-by-id.handlebars')
 
 const getBeersSuccess = (data) => {
   console.log(data)
-  $('#message').text('Beers Shown Successfully!')
+  $('#message').text('Beers Shown Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   const showBeersHtml = showBeersTemplate({ beers: data.beers })
@@ -14,21 +13,21 @@ const getBeersSuccess = (data) => {
 
 const getBeersFailure = (error) => {
   console.error(error)
-  $('#message').text('Failed to list beers.')
+  $('#message').text('Failed to list beers')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
 
 const createBeerSuccess = (data) => {
   console.log(data)
-  $('#message').text('Logged new beer!')
+  $('#message').text('Logged new beer')
   $('#message').removeClass()
   $('#message').addClass('success')
 }
 
 const createBeerFailure = (error) => {
   console.error(error)
-  $('#message').text('Error logging new beer.')
+  $('#message').text('Error logging new beer')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
@@ -36,16 +35,31 @@ const createBeerFailure = (error) => {
 const showBeerSuccess = (data) => {
   console.log(data)
   $('form').trigger('reset')
-  $('#message').text('Beer Shown Successfully!')
+  $('#message').text('Beer Shown Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  const showById = showBeerById({ beer: data.beer })
+  const showById = showBeersTemplate({ beers: [data.beer] })
   $('.content').html(showById)
 }
 
 const showBeerFailure = (error) => {
   console.error(error)
-  $('#message').text('Failed to show beer.')
+  $('#message').text('Failed to show beer')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
+const updateBeerSuccess = (data) => {
+  console.log(data)
+  $('form').trigger('reset')
+  $('#message').text('Updated Beer Selection')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const updateBeerFailure = (error) => {
+  console.error(error)
+  $('#message').text('Update failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
@@ -53,21 +67,21 @@ const showBeerFailure = (error) => {
 const destroyBeerSuccess = (data) => {
   console.log(data)
   $('form').trigger('reset')
-  $('#message').text('Deleted Beer Selection!')
+  $('#message').text('Deleted Beer Selection')
   $('#message').removeClass()
   $('#message').addClass('success')
 }
 
 const destroyBeerFailure = (error) => {
   console.error(error)
-  $('#message').text('Failed to delete beer.')
+  $('#message').text('Failed to delete beer')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
 
 const clearBeers = () => {
   $('.content').empty()
-  $('#message').text('Cleared beer selection.')
+  $('#message').text('Cleared beer selection')
   $('#message').removeClass()
   $('#message').addClass('success')
 }
