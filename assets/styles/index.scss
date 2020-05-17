@@ -10,26 +10,34 @@ body {
   border-radius: 5px;
 }
 
-.success {
-  display: inline-flex;
-  color: white;
+.alert-success {
+  display: none;
   border: 1px solid black;
-  background-color: #88ff70;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
+  margin: 0 250px 0 25px;
+  align: justify;
+  text-align: center;
+  max-width: 325px;
+  min-width: 200px;
+}
+.alert-danger {
+  display: none;
+  border: 1px solid black;
+  margin: 0 250px 0 25px;
+  align: justify;
+  text-align: center;
+  max-width: 325px;
+  min-width: 200px;
+}
+.alert-info {
+  display: none;
+  border: 1px solid black;
+  margin: 0 250px 0 25px;
+  align: justify;
+  text-align: center;
+  max-width: 325px;
+  min-width: 200px;
 }
 
-.failure {
-  display: inline-flex;
-  color: white;
-  border: 1px solid black;
-  background-color: #ff7088;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#authenticated {
+.authenticated {
   display: none;
 }
