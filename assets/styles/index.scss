@@ -10,25 +10,7 @@ body {
   border-radius: 5px;
 }
 
-.alert-success {
-  display: none;
-  border: 1px solid black;
-  margin: 0 250px 0 25px;
-  align: justify;
-  text-align: center;
-  max-width: 325px;
-  min-width: 200px;
-}
-.alert-danger {
-  display: none;
-  border: 1px solid black;
-  margin: 0 250px 0 25px;
-  align: justify;
-  text-align: center;
-  max-width: 325px;
-  min-width: 200px;
-}
-.alert-info {
+.alert-success, .alert-danger, .alert-info {
   display: none;
   border: 1px solid black;
   margin: 0 250px 0 25px;
