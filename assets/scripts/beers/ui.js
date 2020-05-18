@@ -112,6 +112,8 @@ module.exports = {
   createBeerFailure,
   showBeerSuccess,
   showBeerFailure,
+  updateBeerSuccess,
+  updateBeerFailure,
   destroyBeerSuccess,
   destroyBeerFailure,
   clearBeers
