@@ -175,12 +175,29 @@
               </button>
             </div>
             <div class="modal-body">
+
               <form id="change-password">
-                <input class="input-field" required type="password" name="passwords[old]" placeholder="Old Password">
-                <input class="input-field" required type="password" name="passwords[new]" placeholder="New Password">
-                <button type="submit" class="btn btn-primary">Change It Up!</button>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-6">
+                    <label for="inputOldPassword">Old Password:</label>
+                    <input class="input-field form-control" required type="password" name="passwords[old]" placeholder="Enter Old Password">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="inputNewPassword">New Password:</label>
+                    <input class="input-field form-control" required type="password" name="passwords[new]" placeholder="Enter New Password">
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary">Change It Up!</button>
+                </div>
+
               </form>
-              </form>
+
             </div>
           </div>
         </div>
