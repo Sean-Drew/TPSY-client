@@ -22,18 +22,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <div class="unauthenticated">
+                <!-- Sign Up Modal Button Trigger -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+                  New to TPSY? <b>Sign Up!</b>
+                </button>
+                <!-- Sign In Modal Button Trigger -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+                  Getting Thirsty? <b>Sign In!</b>
+                </button>
+              </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                User Profile
+                User Actions
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
             </li>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
@@ -57,12 +60,7 @@
       </div>
 
 
-    <div class="unauthenticated">
-
-      <!-- Sign Up Modal Button Trigger -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
-        New to TPSY? <b>Sign Up!</b>
-      </button>
+    <div class="unauthenticated modal-content">
 
       <!-- Sign Up Modal Content -->
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,8 +74,8 @@
             </div>
             <div class="modal-body">
               <form id="sign-up">
-                <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-                <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                <input class="input-field" required type="text" placeholder="Email" name="credentials[email]">
+                <input class="input-field" required type="password" placeholder="Password" name="credentials[password]">
                 <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
                 <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
               </form>
@@ -85,13 +83,6 @@
           </div>
         </div>
       </div>
-
-
-
-      <!-- Sign In Modal Button Trigger -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
-        Getting Thirsty? <b>Sign In!</b>
-      </button>
 
       <!-- Sign In Modal Content -->
       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -105,8 +96,8 @@
             </div>
             <div class="modal-body">
               <form id="sign-in">
-                <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-                <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                <input class="input-field" required type="text" placeholder="Email" name="credentials[email]">
+                <input class="input-field" required type="password" placeholder="Password" name="credentials[password]">
                 <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
               </form>
               </form>
