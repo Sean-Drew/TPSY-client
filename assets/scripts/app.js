@@ -4,9 +4,20 @@ const authEvents = require('./auth/events')
 const beerEvents = require('./beers/events')
 
 $(() => {
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
+  // extra .submit and preventDefault + toggle is to make BS modal disappear on submit.
+  $('#sign-up').on('submit', authEvents.onSignUp).submit(function(event) {
+    event.preventDefault()
+    $('#sign-up-modal').modal('toggle')
+  })
+  $('#sign-in').on('submit', authEvents.onSignIn).submit(function(event) {
+    event.preventDefault()
+    $('#sign-in-modal').modal('toggle')
+  })
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   beerEvents.addHandlers()
+  // $('#sign-in').submit(function(e) {
+  //   e.preventDefault()
+  //   $('#sign-in-modal').modal('toggle')
+  // })
 })

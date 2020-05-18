@@ -13,8 +13,8 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><h1>TPSY</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,14 +36,12 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </nav>
-
-      <h1> TPSY </h1>
 
       <div class="user-alert-messages">
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -58,23 +56,66 @@
         </div>
       </div>
 
+
       <div class="unauthenticated">
 
-        <form id="sign-up">
-          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
-          <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
-          <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
+        <!-- Sign Up Modal Button Trigger -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+          New to TPSY? <b>Sign Up!</b>
+        </button>
 
-        <form id="sign-in">
-          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
-          <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
+        <!-- Sign Up Modal Content -->
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New User Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+                  <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                  <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Sign In Modal Button Trigger -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+          Getting Thirsty? <b>Sign In!</b>
+        </button>
+
+        <!-- Sign In Modal Content -->
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign In an Existing User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+                  <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                </form>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     </div>
-
 
     <div class="authenticated">
 
