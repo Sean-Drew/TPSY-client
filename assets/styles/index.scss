@@ -4,10 +4,10 @@ body {
   background-color: lightgray;
 }
 
-#TPSY-header {
-  color: white;
-  border: 1px solid white;
-  padding: 10px;
+#TPSY-logo {
+  max-width: 35%;
+  max-height: 35%;
+  display: inline-block;
 }
 
 .btn-primary {
@@ -30,15 +30,14 @@ body {
   display: none;
 }
 
-.unauth-navbar-btn, #navbarDropdown {
+.dropdown-menu {
+  background-color: #343a40;
+  border: 1px solid black;
+}
+
+.unauth-navbar-btn, .auth-nav-drop-btn, #navbarDropdown {
   color: white;
     &:hover {
-      color: darkgray;
-    }
-}
-.auth-nav-drop-btn {
-  color: black;
-    &:hover {
-      background: lightgray
+      color: lightgray;
     }
 }
