@@ -83,12 +83,38 @@
               </button>
             </div>
             <div class="modal-body">
+
               <form id="sign-up">
-                <input class="input-field" required type="text" placeholder="Email" name="credentials[email]">
-                <input class="input-field" required type="password" placeholder="Password" name="credentials[password]">
-                <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
-                <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail">Email:</label>
+                    <input class="input-field form-control" required type="text" placeholder="Enter Email Here" name="credentials[email]">
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword">Password:</label>
+                    <input class="input-field form-control" required type="password" placeholder="Enter Password Here" name="credentials[password]">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="inputPasswordConfirmation">Confirm Password:</label>
+                    <input class="input-field form-control" required type="password" placeholder="Confirm Your Password" name="credentials[password_confirmation]">
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                </div>
+
               </form>
+
             </div>
           </div>
         </div>
@@ -105,11 +131,29 @@
               </button>
             </div>
             <div class="modal-body">
+
               <form id="sign-in">
-                <input class="input-field" required type="text" placeholder="Email" name="credentials[email]">
-                <input class="input-field" required type="password" placeholder="Password" name="credentials[password]">
-                <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail">Email:</label>
+                    <input class="input-field form-control" required type="text" placeholder="Enter Your Email" name="credentials[email]">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword">Password:</label>
+                    <input class="input-field form-control" required type="password" placeholder="Enter Your Password" name="credentials[password]">
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                </div>
+
               </form>
+
               </form>
             </div>
           </div>
@@ -176,6 +220,7 @@
       </form>
 
     </div>
+
 
     <main>
       <div id="content" class="content"></div>
