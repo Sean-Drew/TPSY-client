@@ -13,11 +13,10 @@ $(() => {
     event.preventDefault()
     $('#sign-in-modal').modal('toggle')
   })
-  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#change-password').on('submit', authEvents.onChangePassword).submit(function(event) {
+    event.preventDefault()
+    $('#change-password-modal').modal('toggle')
+  })
   $('#sign-out').on('submit', authEvents.onSignOut)
   beerEvents.addHandlers()
-  // $('#sign-in').submit(function(e) {
-  //   e.preventDefault()
-  //   $('#sign-in-modal').modal('toggle')
-  // })
 })

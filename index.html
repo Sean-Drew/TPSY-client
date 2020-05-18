@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
       <title>TPSY</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,9 +11,9 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+  <body>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><h1>TPSY</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
         </div>
       </nav>
 
-      <div class="user-alert-messages">
+    <div class="user-alert-messages">
         <div class="alert alert-success alert-dismissible fade show" role="alert">
         </div>
 
@@ -51,79 +51,100 @@
         </div>
       </div>
 
-      <div class="beer-alert-messages">
+    <div class="beer-alert-messages">
         <div class="alert alert-info alert-dismissible fade show" role="alert">
         </div>
       </div>
 
 
-      <div class="unauthenticated">
+    <div class="unauthenticated">
 
-        <!-- Sign Up Modal Button Trigger -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
-          New to TPSY? <b>Sign Up!</b>
-        </button>
+      <!-- Sign Up Modal Button Trigger -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+        New to TPSY? <b>Sign Up!</b>
+      </button>
 
-        <!-- Sign Up Modal Content -->
-        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New User Sign Up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form id="sign-up">
-                  <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-                  <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
-                  <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
-                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
-                </form>
-              </div>
+      <!-- Sign Up Modal Content -->
+      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New User Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+                <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+                <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
 
 
-        <!-- Sign In Modal Button Trigger -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
-          Getting Thirsty? <b>Sign In!</b>
-        </button>
+      <!-- Sign In Modal Button Trigger -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+        Getting Thirsty? <b>Sign In!</b>
+      </button>
 
-        <!-- Sign In Modal Content -->
-        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sign In an Existing User</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form id="sign-in">
-                  <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
-                  <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
-                  <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
-                </form>
-                </form>
-              </div>
+      <!-- Sign In Modal Content -->
+      <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign In an Existing User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+                <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+                <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+              </form>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
     </div>
 
     <div class="authenticated">
 
-      <form id="change-password">
-        <input class="input-field" required type="password" name="passwords[old]" placeholder="Old Password">
-        <input class="input-field" required type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit" class="btn btn-primary">Change Password</button>
-      </form>
+      <!-- Sign Up Modal Button Trigger -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">
+        Change Password
+      </button>
+
+      <!-- Sign Up Modal Content -->
+      <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <input class="input-field" required type="password" name="passwords[old]" placeholder="Old Password">
+                <input class="input-field" required type="password" name="passwords[new]" placeholder="New Password">
+                <button type="submit" class="btn btn-primary">Change It Up!</button>
+              </form>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <form id="sign-out">
         <button type="submit" class="btn btn-primary">Sign Out</button>
@@ -167,5 +188,5 @@
       <div id="content" class="content"></div>
     </main>
 
-    </body>
+  </body>
 </html>
