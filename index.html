@@ -24,19 +24,29 @@
             <li class="nav-item active">
               <div class="unauthenticated">
                 <!-- Sign Up Modal Button Trigger -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+                <button type="button" class="btn unauth-navbar-btn" data-toggle="modal" data-target="#sign-up-modal">
                   New to TPSY? <b>Sign Up!</b>
                 </button>
                 <!-- Sign In Modal Button Trigger -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+                <button type="button" class="btn unauth-navbar-btn" data-toggle="modal" data-target="#sign-in-modal">
                   Getting Thirsty? <b>Sign In!</b>
                 </button>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown authenticated">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 User Actions
               </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- Change Password Modal Button Trigger -->
+                  <button type="button" class="btn auth-nav-drop-btn" data-toggle="modal" data-target="#change-password-modal">
+                    Change Password
+                  </button>
+                <div class="dropdown-divider"></div>
+                  <form id="sign-out">
+                    <button type="submit" class="btn auth-nav-drop-btn">Sign Out</button>
+                  </form>
+                </div>
             </li>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
@@ -110,12 +120,7 @@
 
     <div class="authenticated">
 
-      <!-- Sign Up Modal Button Trigger -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">
-        Change Password
-      </button>
-
-      <!-- Sign Up Modal Content -->
+      <!-- Change Password Modal Content -->
       <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -137,10 +142,7 @@
         </div>
       </div>
 
-      <form id="sign-out">
-        <button type="submit" class="btn btn-primary">Sign Out</button>
-      </form>
-
+      <!-- Beer Resource CRUD Actions -->
       <form id="create-beer">
         <input class="input-field" required type="text" name="brand" placeholder="ex: Sam Adams">
         <input class="input-field" required type="text" name="name" placeholder="ex: Summer Ale">

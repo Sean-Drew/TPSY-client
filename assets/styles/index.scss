@@ -23,3 +23,16 @@ body {
 .authenticated {
   display: none;
 }
+
+.unauth-navbar-btn, #navbarDropdown {
+  color: white;
+    &:hover {
+      color: darkgray;
+    }
+}
+.auth-nav-drop-btn {
+  color: black;
+    &:hover {
+      background: lightgray
+    }
+}
