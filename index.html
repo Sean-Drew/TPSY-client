@@ -299,8 +299,68 @@
           </div>
         </div>
 
+        <!-- Update Beer Modal Button Trigger -->
+        <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#update-beer-modal">
+          <b>Update a Beer Record</b>
+        </button>
 
+        <!-- Update Beer Modal Content -->
+        <div class="modal fade" id="update-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateBeerModalLabel"><b>Update One Beer (by ID tag)</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
 
+                <form id="update-beer" class="update-beer-field">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerId">Beer ID:</label>
+                      <input class="input-field form-control" required type="text" name="id" placeholder="Enter Beer ID Here">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBrandName">Brewery:</label>
+                      <input class="input-field form-control" type="text" name="brand" placeholder="ex: Night Shift">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerName">Beer Name:</label>
+                      <input class="input-field form-control" type="text" name="name" placeholder="ex: Santilli">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerStyle">Style:</label>
+                      <!-- <input class="input-field form-control" type="text" name="style" placeholder="ex: IPA"> -->
+                      <select class="custom-select show-tick" name="style">
+                        <option value="" selected disabled>Select from the available list</option>
+                        <option value="Ale">Ale</option>
+                        <option value="Bock">Bock</option>
+                        <option value="Fruit">Fruit</option>
+                        <option value="IPA">IPA</option>
+                        <option value="Lager">Lager</option>
+                        <option value="Pilsner">Pilsner</option>
+                        <option value="Stout">Stout</option>
+                        <option value="Strong Ale">Strong Ale</option>
+                        <option value="Sour Ale">Sour Ale</option>
+                        <option value="Wheat">Wheat</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerDescription">Description/Notes:</label>
+                      <textarea class="input-field form-control" name="description" rows="5" placeholder="Describe the beer and style (275 characters max)"></textarea>
+                    </div>
+                    <div class="form-row">
+                      <button type="submit" class="btn btn-primary">Update Beer</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Destroy Beer by ID Modal Button Trigger -->
         <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#destroy-beer-modal">
@@ -335,19 +395,6 @@
             </div>
           </div>
         </div>
-
-
-
-
-
-        <form id="update-beer">
-          <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
-          <input class="input-field" type="text" name="brand" placeholder="ex: Sam Adams">
-          <input class="input-field" type="text" name="name" placeholder="ex: Summer Ale">
-          <input class="input-field" type="text" name="style" placeholder="ex: Ale">
-          <input class="input-field" type="text" name="description" placeholder="Describe the beer!">
-          <button type="submit" class="btn btn-primary">Update a Beer</button>
-        </form>
 
         <!-- End column left / CRUD Below -->
       </div>
