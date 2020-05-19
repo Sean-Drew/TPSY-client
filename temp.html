@@ -38,36 +38,57 @@ text block area for description
 
 Example form field
 
-<!-- Sign Up Modal Button Trigger -->
-<button type="button" class="btn unauth-navbar-btn" data-toggle="modal" data-target="#sign-up-modal">
-  New to TPSY? <b>Sign Up!</b>
+<!-- Create Beer Modal Button Trigger -->
+<button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#create-beer-modal">
+  <b>New Beer</b>
 </button>
 
-<!-- Change Password Modal Content -->
-<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Create Beer Modal Content -->
+<div class="modal fade" id="create-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><b>Change Password</b></h5>
+        <h5 class="modal-title" id="createBeerModalLabel"><b>Log a New Beer</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
 
-        <form id="change-password">
+        <form id="create-beer" class="beer-create-field">
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputOldPassword">Old Password:</label>
-              <input class="input-field form-control" required type="password" name="passwords[old]" placeholder="Enter Old Password">
+            <div class="form-group col-md-12">
+              <label for="inputBrandName">Brewery:</label>
+              <input class="input-field form-control" required type="text" name="brand" placeholder="ex: Night Shift">
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputNewPassword">New Password:</label>
-              <input class="input-field form-control" required type="password" name="passwords[new]" placeholder="Enter New Password">
+            <div class="form-group col-md-12">
+              <label for="inputBeerName">Beer Name:</label>
+              <input class="input-field form-control" required type="text" name="name" placeholder="ex: Santilli">
             </div>
-          </div>
-          <div class="form-row">
-            <button type="submit" class="btn btn-primary">Change It Up!</button>
+            <div class="form-group col-md-12">
+              <label for="inputBeerStyle">Style:</label>
+              <!-- <input class="input-field form-control" type="text" name="style" placeholder="ex: IPA"> -->
+              <select class="custom-select show-tick" name="style">
+                <option value="" selected disabled>Select from the available list</option>
+                <option value="Ale">Ale</option>
+                <option value="Bock">Bock</option>
+                <option value="Fruit">Fruit</option>
+                <option value="IPA">IPA</option>
+                <option value="Lager">Lager</option>
+                <option value="Pilsner">Pilsner</option>
+                <option value="Stout">Stout</option>
+                <option value="Strong Ale">Strong Ale</option>
+                <option value="Sour Ale">Sour Ale</option>
+                <option value="Wheat">Wheat</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputBeerDescription">Description/Notes:</label>
+              <textarea class="input-field form-control" name="description" rows="5" placeholder="Describe the beer and style (275 characters max)"></textarea>
+            </div>
+            <div class="form-row">
+              <button type="submit" class="btn btn-primary">Add to Beer Log</button>
+            </div>
           </div>
         </form>
 

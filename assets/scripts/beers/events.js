@@ -64,7 +64,10 @@ const addHandlers = () => {
     event.preventDefault()
     $('#create-beer-modal').modal('toggle')
   })
-  $('#show-beer').on('submit', onShowBeer)
+  $('#show-beer').on('submit', onShowBeer).submit(function(event) {
+    event.preventDefault()
+    $('#show-beer-modal').modal('toggle')
+  })
   $('#update-beer').on('submit', onUpdateBeer)
   $('#destroy-beer').on('submit', onDestroyBeer)
 }
