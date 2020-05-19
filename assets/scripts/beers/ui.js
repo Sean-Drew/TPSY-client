@@ -3,7 +3,7 @@
 const showBeersTemplate = require('../templates/beer-listing.handlebars')
 
 const getBeersSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   // Enable a 1.5 sec info alert, pass in the text to be used.
   $('.alert-info').text('Showing All Beers').fadeTo(1000, 500).slideUp(500, function(){
@@ -23,7 +23,7 @@ const getBeersFailure = (error) => {
 }
 
 const createBeerSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   // Enable a 1.5 sec info alert, pass in the text to be used.
   $('.alert-info').text('Created New Beer').fadeTo(1000, 500).slideUp(500, function(){
@@ -41,7 +41,7 @@ const createBeerFailure = (error) => {
 }
 
 const showBeerSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   // Enable a 1.5 sec info alert, pass in the text to be used.
   $('.alert-info').text('Showing Selected Beer').fadeTo(1000, 500).slideUp(500, function(){
@@ -61,7 +61,7 @@ const showBeerFailure = (error) => {
 }
 
 const updateBeerSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   // Enable a 1.5 sec info alert, pass in the text to be used.
   $('.alert-info').text('Beer Updated').fadeTo(1000, 500).slideUp(500, function(){
@@ -83,7 +83,7 @@ const destroyBeerSuccess = (data) => {
   $('.alert-info').text('Beer Deleted').fadeTo(1000, 500).slideUp(500, function(){
     $('.alert-info').slideUp(500);
   })
-  console.log(data)
+  // console.log(data)
   // Enable a 1.5 sec info alert, pass in the text to be used.
 }
 
