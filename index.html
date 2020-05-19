@@ -270,9 +270,7 @@
           <b>Display One Beer</b>
         </button>
 
-
-
-        <!-- Create Beer Modal Content -->
+        <!-- Show Beer by ID Modal Content -->
         <div class="modal fade" id="show-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -304,10 +302,43 @@
 
 
 
-        <form id="destroy-beer">
-          <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
-          <button id="destroyBeerById" class="btn btn-info mr-2">Delete Selected Beer</button>
-        </form>
+        <!-- Destroy Beer by ID Modal Button Trigger -->
+        <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#destroy-beer-modal">
+          <b>Delete a Beer Record</b>
+        </button>
+
+        <!-- Destroy Beer by ID Modal Content -->
+        <div class="modal fade" id="destroy-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="destroyBeerModalLabel"><b>Delete One Beer (by ID tag)</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form id="destroy-beer" class="beer-destroy-field">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerIdToDelete">Beer ID:</label>
+                      <input class="input-field form-control" required type="text" name="id" placeholder="Enter Beer ID Here">
+                    </div>
+                    <div class="form-row">
+                      <button id="destroyBeerById" class="btn btn-primary">Delete Selected Beer</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
 
         <form id="update-beer">
           <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
