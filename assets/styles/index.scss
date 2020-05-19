@@ -2,6 +2,7 @@
 
 body {
   background-color: lightgray;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 #TPSY-logo {
@@ -11,10 +12,12 @@ body {
 }
 
 .btn-primary {
+  color: black;
   background-color: darkgray;
   border: 2px solid black;
   border-radius: 5px;
     &:hover {
+      color: white;
       border-color: black;
       background-color: #343a40;
     }
