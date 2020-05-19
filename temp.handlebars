@@ -1,0 +1,52 @@
+{{#each beers as |beer|}}
+  {{log beer}}
+  <section data-id="{{beer.id}}">
+
+    <div class="card">
+      <div class="card-body">
+
+        <p class="card-text text-center">
+          <b>Brewery:</b> {{limit beer.brand 20}}
+        </p>
+
+        <p class="card-text text-center">
+          <b>Beer Name:</b> {{limit beer.name 20}}
+        </p>
+
+        <p class="card-text text-center">
+          <b>Style:</b> {{limit beer.style 20}}
+        </p>
+
+        <p class="card-text text-center">
+          {{#if beer.description}}
+            <b>Description:</b> {{beer.description}}
+          {{else}}
+            <b>Description:</b> No description provided.
+          {{/if}}
+        </p>
+
+        <p class="card-text" style="font-size: 10px">
+          <b>ID:</b> {{beer._id}}
+        </p>
+
+      </div>
+    </div>
+
+
+  </section>
+
+{{/each}}
+
+
+
+
+<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>

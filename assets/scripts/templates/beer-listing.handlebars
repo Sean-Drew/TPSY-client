@@ -1,36 +1,43 @@
-{{#each beers as |beer|}}
-  {{log beer}}
-  <section data-id="{{beer.id}}">
+<div class="container-fluid">
+  <div class="row card-row">
+    {{#each beers as |beer|}}
+      {{log beer}}
+      <div class="col-md-6 col-sm-12">
+        <section data-id="{{beer.id}}">
 
-    <h3>Brand:</h3>
-    <h5>
-      {{limit beer.brand 20}}
-    </h5>
+          <div class="card">
+            <div class="card-body">
 
-    <h3>Name:</h3>
-    <h5>
-      {{limit beer.name 20}}
-    </h5>
+              <p class="card-text text-center">
+                <b>Brewery:</b> {{limit beer.brand 50}}
+              </p>
 
-    <h3>Style:</h3>
-    <h5>
-      {{limit beer.style 20}}
-    </h5>
+              <p class="card-text text-center">
+                <b>Beer Name:</b> {{limit beer.name 50}}
+              </p>
 
-    <h3>Description:</h3>
-    <p>
-      {{#if beer.description}}
-        {{beer.description}}
-      {{else}}
-        No description provided.
-      {{/if}}
-    </p>
+              <p class="card-text text-center">
+                <b>Style:</b> {{limit beer.style 20}}
+              </p>
 
-    <h3>ID</h3>
-    <h5>
-      {{beer._id}}
-    </h5>
+              <p class="card-text text-center">
+                {{#if beer.description}}
+                  <b>Description:</b> {{beer.description}}
+                {{else}}
+                  <b>Description:</b> No description provided.
+                {{/if}}
+              </p>
 
-  </section>
+              <p class="card-text" style="font-size: 10px">
+                <b>ID:</b> {{beer._id}}
+              </p>
 
-{{/each}}
+            </div>
+          </div>
+
+
+        </section>
+      </div>
+    {{/each}}
+  </div>
+</div>
