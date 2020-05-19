@@ -12,6 +12,13 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
   <body>
+
+    <!-- Include Facebook SDK for Javascript to power the 'like' button -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+    <!-- Include Linkedin plugin to power 'share' button -->
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
     <div id="page-container">
       <div id="content-wrap">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -414,15 +421,20 @@
       <main>
         <div class="container">
           <div class="row">
-        <div class="column right-content">
-            <div id="content" class="content beer-content"></div>
-        </div>
-        </div>
+            <div class="column right-content">
+              <div id="content" class="content beer-content"></div>
+            </div>
+          </div>
         </div>
       </main>
 
       </div>
-    <footer id="footer">&copy; Copyright 2020 TPSY / Lockwood</footer>
+    <footer id="footer">
+      <script type="IN/Share" data-url="https://sean-drew.github.io/TPSY-client/"></script>
+      Must be 21+ to use this website.
+      &copy; Copyright 2020 TPSY / Lockwood.
+      <div class="fb-like" data-href="https://www.facebook.com/TPSY.beer" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+    </footer>
     </div>
   </body>
 </html>
