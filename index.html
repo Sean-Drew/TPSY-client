@@ -77,7 +77,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><b>New User Sign Up</b></h5>
+              <h5 class="modal-title" id="signUpModalLabel"><b>New User Sign Up</b></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -125,7 +125,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><b>Sign In an Existing User</b></h5>
+              <h5 class="modal-title" id="signInModalLabel"><b>Sign In an Existing User</b></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -165,7 +165,7 @@
     <div class="authenticated">
 
       <!-- Change Password Modal Content -->
-      <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -177,25 +177,19 @@
             <div class="modal-body">
 
               <form id="change-password">
-
                 <div class="form-row">
-
                   <div class="form-group col-md-6">
                     <label for="inputOldPassword">Old Password:</label>
                     <input class="input-field form-control" required type="password" name="passwords[old]" placeholder="Enter Old Password">
                   </div>
-
                   <div class="form-group col-md-6">
                     <label for="inputNewPassword">New Password:</label>
                     <input class="input-field form-control" required type="password" name="passwords[new]" placeholder="Enter New Password">
                   </div>
-
                 </div>
-
                 <div class="form-row">
                   <button type="submit" class="btn btn-primary">Change It Up!</button>
                 </div>
-
               </form>
 
             </div>
@@ -204,38 +198,81 @@
       </div>
 
       <!-- Beer Resource CRUD Actions -->
-      <form id="create-beer">
-        <input class="input-field" required type="text" name="brand" placeholder="ex: Sam Adams">
-        <input class="input-field" required type="text" name="name" placeholder="ex: Summer Ale">
-        <input class="input-field" type="text" name="style" placeholder="ex: Ale">
-        <input class="input-field" type="text" name="description" placeholder="Describe the beer!">
-        <button type="submit" class="btn btn-primary">Add to Beer Log</button>
-      </form>
+      <div class="column left-CRUD">
 
-      <div id="beer-buttons">
-        <button id="getBeersButton" class="btn btn-info mr-2">Get My Beers!</button>
-        <button id="clearBeersButton" class="btn btn-outline-info">Clear Beer Selection</button>
+        <!-- Create Beer Modal Button Trigger -->
+        <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#create-beer-modal">
+          <b>New Beer</b>
+        </button>
+
+        <!-- Create Beer Modal Content -->
+        <div class="modal fade" id="create-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="createBeerModalLabel"><b>Log a New Beer</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form id="create-beer" class="beer-create-field">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputBrandName">Brewery:</label>
+                      <input class="input-field form-control" required type="text" name="brand" placeholder="ex: Night Shift">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerName">Beer Name:</label>
+                      <input class="input-field form-control" required type="text" name="name" placeholder="ex: Santilli">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerStyle">Style:</label>
+                      <input class="input-field form-control" type="text" name="style" placeholder="ex: IPA">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputBeerDescription">Description/Notes:</label>
+                      <textarea class="input-field form-control" name="description" rows="5" placeholder="Describe the beer (275 characters max)"></textarea>
+                    </div>
+                    <div class="form-row">
+                      <button type="submit" class="btn btn-primary">Add to Beer Log</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="beer-buttons">
+          <button id="getBeersButton" class="btn btn-info mr-2">Get My Beers!</button>
+          <button id="clearBeersButton" class="btn btn-outline-info">Clear Beer Selection</button>
+        </div>
+
+        <form id="show-beer">
+          <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
+          <button id="showBeerById" class="btn btn-info mr-2">Display Selected Beer</button>
+        </form>
+
+        <form id="destroy-beer">
+          <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
+          <button id="destroyBeerById" class="btn btn-info mr-2">Delete Selected Beer</button>
+        </form>
+
+        <form id="update-beer">
+          <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
+          <input class="input-field" type="text" name="brand" placeholder="ex: Sam Adams">
+          <input class="input-field" type="text" name="name" placeholder="ex: Summer Ale">
+          <input class="input-field" type="text" name="style" placeholder="ex: Ale">
+          <input class="input-field" type="text" name="description" placeholder="Describe the beer!">
+          <button type="submit" class="btn btn-primary">Update a Beer</button>
+        </form>
+
+        <!-- End column left / CRUD Below -->
       </div>
-
-      <form id="show-beer">
-        <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
-        <button id="showBeerById" class="btn btn-info mr-2">Display Selected Beer</button>
-      </form>
-
-      <form id="destroy-beer">
-        <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
-        <button id="destroyBeerById" class="btn btn-info mr-2">Delete Selected Beer</button>
-      </form>
-
-      <form id="update-beer">
-        <input class="input-field" required type="text" name="id" placeholder="Enter Beer ID">
-        <input class="input-field" type="text" name="brand" placeholder="ex: Sam Adams">
-        <input class="input-field" type="text" name="name" placeholder="ex: Summer Ale">
-        <input class="input-field" type="text" name="style" placeholder="ex: Ale">
-        <input class="input-field" type="text" name="description" placeholder="Describe the beer!">
-        <button type="submit" class="btn btn-primary">Update a Beer</button>
-      </form>
-
+<!-- End Authenticated Section Below -->
     </div>
 
 

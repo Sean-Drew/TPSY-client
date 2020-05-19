@@ -60,7 +60,10 @@ const onDestroyBeer = (event) => {
 const addHandlers = () => {
   $('#getBeersButton').on('click', onGetBeers)
   $('#clearBeersButton').on('click', onClearBeers)
-  $('#create-beer').on('submit', onCreateBeer)
+  $('#create-beer').on('submit', onCreateBeer).submit(function(event) {
+    event.preventDefault()
+    $('#create-beer-modal').modal('toggle')
+  })
   $('#show-beer').on('submit', onShowBeer)
   $('#update-beer').on('submit', onUpdateBeer)
   $('#destroy-beer').on('submit', onDestroyBeer)

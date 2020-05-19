@@ -41,3 +41,21 @@ body {
       color: lightgray;
     }
 }
+
+.auth-column-left-btn {
+  color: #343a40;
+  font-size: 20px;
+    &:hover {
+      background-color: #343a40;
+      color: white;
+    }
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+.left-CRUD {
+  max-width: 25%;
+  height: 100%;
+}
