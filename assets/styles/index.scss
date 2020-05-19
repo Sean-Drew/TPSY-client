@@ -14,6 +14,10 @@ body {
   background-color: darkgray;
   border: 2px solid black;
   border-radius: 5px;
+    &:hover {
+      border-color: black;
+      background-color: #343a40;
+    }
 }
 
 .alert-success, .alert-danger, .alert-info {
