@@ -14,7 +14,7 @@ const getBeersSuccess = (data) => {
 }
 
 const getBeersFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
   $('.alert-danger').text('Failed to List Beers').fadeTo(1000, 500).slideUp(500, function(){
@@ -32,7 +32,7 @@ const createBeerSuccess = (data) => {
 }
 
 const createBeerFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
   $('.alert-danger').text('Failed to Create New Beer').fadeTo(1000, 500).slideUp(500, function(){
@@ -52,7 +52,7 @@ const showBeerSuccess = (data) => {
 }
 
 const showBeerFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
   $('.alert-danger').text('Failed to Show Selected Beer').fadeTo(1000, 500).slideUp(500, function(){
@@ -70,7 +70,7 @@ const updateBeerSuccess = (data) => {
 }
 
 const updateBeerFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
   $('.alert-danger').text('Failed to Update Beer').fadeTo(1000, 500).slideUp(500, function(){
@@ -88,7 +88,7 @@ const destroyBeerSuccess = (data) => {
 }
 
 const destroyBeerFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
   $('.alert-danger').text('Failed to Delete Beer').fadeTo(1000, 500).slideUp(500, function(){
