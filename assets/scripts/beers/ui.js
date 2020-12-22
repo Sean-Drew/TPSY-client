@@ -17,7 +17,7 @@ const getBeersFailure = (error) => {
   // console.error(error)
   $('form').trigger('reset')
   // Enable a 1.5 sec error alert, pass in the text to be used.
-  $('.alert-danger').text('Failed to List Beers').fadeTo(1000, 500).slideUp(500, function(){
+  $('.alert-danger').text('Failed to List Beers').fadeTo(1000, 500).slideUp(500, function() {
     $('.alert-danger').slideUp(500);
   })
 }
