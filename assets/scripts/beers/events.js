@@ -60,19 +60,19 @@ const onDestroyBeer = (event) => {
 const addHandlers = () => {
   $('#getBeersButton').on('click', onGetBeers)
   $('#clearBeersButton').on('click', onClearBeers)
-  $('#create-beer').on('submit', onCreateBeer).submit(function(event) {
+  $('#create-beer').on('submit', onCreateBeer).submit(function (event) {
     event.preventDefault()
     $('#create-beer-modal').modal('toggle')
   })
-  $('#show-beer').on('submit', onShowBeer).submit(function(event) {
+  $('#show-beer').on('submit', onShowBeer).submit(function (event) {
     event.preventDefault()
     $('#show-beer-modal').modal('toggle')
   })
-  $('#update-beer').on('submit', onUpdateBeer).submit(function(event) {
+  $('#update-beer').on('submit', onUpdateBeer).submit(function (event) {
     event.preventDefault()
     $('#update-beer-modal').modal('toggle')
   })
-  $('#destroy-beer').on('submit', onDestroyBeer).submit(function(event) {
+  $('#destroy-beer').on('submit', onDestroyBeer).submit(function (event) {
     event.preventDefault()
     $('#destroy-beer-modal').modal('toggle')
   })
