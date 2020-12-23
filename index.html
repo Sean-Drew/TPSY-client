@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>TPSY - Beer Log</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="public/TPSY Black on White.png">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- Add in a reference to the font being used -->
+      <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+    </head>
+  <body>
+
+    <!-- Include Facebook SDK for Javascript to power the 'like' button -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+    <!-- Include Linkedin plugin to power 'share' button -->
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+    <div id="page-container">
+      <div id="content-wrap">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div id="TPSY-header"><img id="TPSY-logo" src="public/TPSY White on Black.png"></div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <div class="unauthenticated">
+                  <!-- Sign Up Modal Button Trigger -->
+                  <button type="button" class="btn unauth-navbar-btn" data-toggle="modal" data-target="#sign-up-modal">
+                    New to TPSY? <b>Sign Up!</b>
+                  </button>
+                  <!-- Sign In Modal Button Trigger -->
+                  <button type="button" class="btn unauth-navbar-btn" data-toggle="modal" data-target="#sign-in-modal">
+                    Feeling Thirsty? <b>Sign In!</b>
+                  </button>
+                </div>
+              </li>
+              <li class="nav-item dropdown authenticated">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  User Actions
+                </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- Change Password Modal Button Trigger -->
+                    <button type="button" class="btn auth-nav-drop-btn" data-toggle="modal" data-target="#change-password-modal">
+                      Change Password
+                    </button>
+                  <div class="dropdown-divider"></div>
+                    <form id="sign-out">
+                      <button type="submit" class="btn auth-nav-drop-btn">Sign Out</button>
+                    </form>
+                  </div>
+              </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+          </div>
+        </nav>
+
+      <div class="user-alert-messages">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+          </div>
+
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          </div>
+        </div>
+
+      <div class="beer-alert-messages">
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+          </div>
+        </div>
+
+      <div class="unauthenticated beer-carousel">
+
+        <div id="carouselUnauthFade" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="7000" pause=false>
+              <img src="public/beer-carousel-4.jpg" class="d-block w-100" alt="variety of beers being poured">
+            </div>
+            <div class="carousel-item" data-interval="7000" pause=false>
+              <img src="public/beer-carousel-1.jpeg" class="d-block w-100" alt="pouring beer into glass">
+            </div>
+            <div class="carousel-item" data-interval="7000" pause=false>
+              <img src="public/beer-carousel-5.jpg" class="d-block w-100" alt="craft beer in crate">
+            </div>
+            <div class="carousel-item" data-interval="7000" pause=false>
+              <img src="public/beer-carousel-2.jpg" class="d-block w-100" alt="beers lined up on bartop">
+            </div>
+            <div class="carousel-item" data-interval="7000" pause=false>
+              <img src="public/beer-carousel-3.jpg" class="d-block w-100" alt="many beers in different glasses">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselUnauthFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselUnauthFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="unauthenticated modal-content">
+
+        <!-- Sign Up Modal Content -->
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalLabel"><b>New User Sign Up</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form id="sign-up">
+
+                  <div class="form-row">
+
+                    <div class="form-group col-md-12">
+                      <label for="inputEmail">Email:</label>
+                      <input class="input-field form-control" required type="email" placeholder="Enter Email Here" name="credentials[email]">
+                    </div>
+
+                  </div>
+
+                  <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword">Password:</label>
+                      <input class="input-field form-control" required type="password" placeholder="Enter Password Here" name="credentials[password]">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputPasswordConfirmation">Confirm Password:</label>
+                      <input class="input-field form-control" required type="password" placeholder="Confirm Your Password" name="credentials[password_confirmation]">
+                    </div>
+
+                  </div>
+
+                  <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sign In Modal Content -->
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signInModalLabel"><b>Sign In an Existing User</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form id="sign-in">
+
+                  <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail">Email:</label>
+                      <input class="input-field form-control" required type="email" placeholder="Enter Your Email" name="credentials[email]">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword">Password:</label>
+                      <input class="input-field form-control" required type="password" placeholder="Enter Your Password" name="credentials[password]">
+                    </div>
+
+                  </div>
+
+                  <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Let's get TPSY!</button>
+                  </div>
+
+                </form>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="authenticated">
+
+        <!-- Change Password Modal Content -->
+        <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Change Password</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form id="change-password">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputOldPassword">Old Password:</label>
+                      <input class="input-field form-control" required type="password" name="passwords[old]" placeholder="Enter Old Password">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputNewPassword">New Password:</label>
+                      <input class="input-field form-control" required type="password" name="passwords[new]" placeholder="Enter New Password">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Change It Up!</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beer Resource CRUD Actions -->
+        <div class="column left-CRUD">
+
+          <!-- Create Beer Modal Button Trigger -->
+          <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#create-beer-modal">
+            <b>New Beer</b>
+          </button>
+
+          <hr class="auth-column-left-hr">
+
+          <!-- Create Beer Modal Content -->
+          <div class="modal fade" id="create-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="createBeerModalLabel"><b>Log a New Beer</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form id="create-beer" class="beer-create-field">
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label for="inputBrandName">Brewery:</label>
+                        <input class="input-field form-control" required type="text" name="brand" placeholder="ex: Night Shift">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerName">Beer Name:</label>
+                        <input class="input-field form-control" required type="text" name="name" placeholder="ex: Santilli">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerStyle">Style:</label>
+                        <!-- <input class="input-field form-control" type="text" name="style" placeholder="ex: IPA"> -->
+                        <select class="custom-select show-tick" name="style">
+                          <option value="" selected disabled>Select from the available list</option>
+                          <option value="Ale">Ale</option>
+                          <option value="Bock">Bock</option>
+                          <option value="Fruit">Fruit</option>
+                          <option value="IPA">IPA</option>
+                          <option value="Lager">Lager</option>
+                          <option value="Pilsner">Pilsner</option>
+                          <option value="Stout">Stout</option>
+                          <option value="Strong Ale">Strong Ale</option>
+                          <option value="Sour Ale">Sour Ale</option>
+                          <option value="Wheat">Wheat</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerDescription">Description/Notes:</label>
+                        <textarea class="input-field form-control" name="description" rows="5" placeholder="Describe the beer and style (275 characters max)"></textarea>
+                      </div>
+                      <div class="form-row">
+                        <button type="submit" class="btn btn-primary">Add to Beer Log</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Show All Beers & Clear Beers Buttons -->
+          <div id="beer-buttons">
+            <button id="getBeersButton" class="btn auth-column-left-btn"><b>Show All Beers</b></button>
+            <hr class="auth-column-left-hr">
+            <button id="clearBeersButton" class="btn auth-column-left-btn"><b>Clear Beer Selection</b></button>
+            <hr class="auth-column-left-hr">
+          </div>
+
+          <!-- Show Beer by ID Modal Button Trigger -->
+          <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#show-beer-modal">
+            <b>Display One Beer</b>
+          </button>
+
+          <hr class="auth-column-left-hr">
+
+          <!-- Show Beer by ID Modal Content -->
+          <div class="modal fade" id="show-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="createBeerModalLabel"><b>Display One Beer (by ID tag)</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form id="show-beer" class="show-beer-field">
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerId">Beer ID:</label>
+                        <input class="input-field form-control" required type="text" name="id" placeholder="Enter Beer ID Here">
+                      </div>
+                      <div class="form-row">
+                        <button id="showBeerById" class="btn btn btn-primary">Display Selected Beer</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Update Beer Modal Button Trigger -->
+          <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#update-beer-modal">
+            <b>Update a Beer Record</b>
+          </button>
+
+          <hr class="auth-column-left-hr">
+
+          <!-- Update Beer Modal Content -->
+          <div class="modal fade" id="update-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateBeerModalLabel"><b>Update One Beer (by ID tag)</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form id="update-beer" class="update-beer-field">
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerId">Beer ID:</label>
+                        <input class="input-field form-control" required type="text" name="id" placeholder="Enter Beer ID Here">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBrandName">Brewery:</label>
+                        <input class="input-field form-control" type="text" name="brand" placeholder="ex: Night Shift">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerName">Beer Name:</label>
+                        <input class="input-field form-control" type="text" name="name" placeholder="ex: Santilli">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerStyle">Style:</label>
+                        <!-- <input class="input-field form-control" type="text" name="style" placeholder="ex: IPA"> -->
+                        <select class="custom-select show-tick" name="style">
+                          <option value="" selected disabled>Select from the available list</option>
+                          <option value="Ale">Ale</option>
+                          <option value="Bock">Bock</option>
+                          <option value="Fruit">Fruit</option>
+                          <option value="IPA">IPA</option>
+                          <option value="Lager">Lager</option>
+                          <option value="Pilsner">Pilsner</option>
+                          <option value="Stout">Stout</option>
+                          <option value="Strong Ale">Strong Ale</option>
+                          <option value="Sour Ale">Sour Ale</option>
+                          <option value="Wheat">Wheat</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerDescription">Description/Notes:</label>
+                        <textarea class="input-field form-control" name="description" rows="5" placeholder="Describe the beer and style (275 characters max)"></textarea>
+                      </div>
+                      <div class="form-row">
+                        <button type="submit" class="btn btn-primary">Update Beer</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Destroy Beer by ID Modal Button Trigger -->
+          <button type="button" class="btn auth-column-left-btn" data-toggle="modal" data-target="#destroy-beer-modal">
+            <b>Delete a Beer Record</b>
+          </button>
+          <hr class="auth-column-left-hr">
+
+          <!-- Destroy Beer by ID Modal Content -->
+          <div class="modal fade" id="destroy-beer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="destroyBeerModalLabel"><b>Delete One Beer (by ID tag)</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form id="destroy-beer" class="beer-destroy-field">
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label for="inputBeerIdToDelete">Beer ID:</label>
+                        <input class="input-field form-control" required type="text" name="id" placeholder="Enter Beer ID Here">
+                      </div>
+                      <div class="form-row">
+                        <button id="destroyBeerById" class="btn btn-primary">Delete Selected Beer</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End column left / CRUD Below -->
+        </div>
+  <!-- End Authenticated Section Below -->
+      </div>
+
+      <!-- Main element below is for beer resource cards rendered from corresponding handlebars -->
+      <main>
+        <div class="container">
+          <div class="row">
+            <div class="column right-content">
+              <div id="content" class="content beer-content"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- End content-wrap div below -->
+      </div>
+    <footer id="footer">
+      <script type="IN/Share" data-url="https://sean-drew.github.io/TPSY-client/"></script>
+      Must be 21+ to use this website.
+      &copy; Copyright 2020 TPSY / Lockwood.
+      <div class="fb-like" data-href="https://www.facebook.com/TPSY.beer" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+    </footer>
+    </div>
+  </body>
+</html>
